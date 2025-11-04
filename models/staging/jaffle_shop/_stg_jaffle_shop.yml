@@ -1,35 +1,35 @@
 models:
   - name: stg_jaffle_shop__customers
-    description: ""
+    description: The grain of this table is one unique customer per
     columns:
       - name: customer_id
         data_type: number
-        description: The primary key
+        description: The primary key for the customers table
         data_tests:
           - not_null
           - unique
 
       - name: first_name
         data_type: varchar
-        description: ""
+        description: "First name of the customer"
 
       - name: last_name
         data_type: varchar
-        description: ""
+        description: "Last name of the customer"
 
   - name: stg_jaffle_shop__orders
-    description: ""
+    description: One order per row
     columns:
       - name: order_id
         data_type: number
-        description: The primary key
+        description: The primary key for the orders table
         data_tests:
           - unique
           - not_null
 
       - name: customer_id
         data_type: number
-        description: ""
+        description: Customer identifier referenced from customers table
         data_tests:
           - relationships:
               field: customer_id
@@ -37,11 +37,11 @@ models:
 
       - name: order_date
         data_type: date
-        description: ""
+        description: Date customer made an order
 
       - name: order_status
         data_type: varchar
-        description: ""
+        description: "{{ doc('order_status') }}"
         data_tests:
           - accepted_values:
               values:

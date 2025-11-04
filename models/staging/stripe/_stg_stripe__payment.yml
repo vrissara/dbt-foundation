@@ -1,0 +1,27 @@
+models:
+  - name: stg_stripe__payments
+    description: "The grain is one row per payment attempt."
+    columns:
+      - name: payment_id
+        data_type: number
+        description: "The unique identifier for payment transaction. Primary key of payments table."
+
+      - name: order_id
+        data_type: number
+        description: "Links payment to the associated order."
+
+      - name: payment_method
+        data_type: varchar
+        description: "Type of payment instrument (e.g., card, wallet, etc.)"
+
+      - name: status
+        data_type: varchar
+        description: "Current payment status (e.g. success, failed)"
+
+      - name: amount
+        data_type: number
+        description: "Amount of the transaction in dollars"
+
+      - name: created
+        data_type: date
+        description: "Timestamp when the payment was created"
