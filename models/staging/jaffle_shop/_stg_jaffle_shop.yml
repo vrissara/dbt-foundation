@@ -11,11 +11,11 @@ models:
 
       - name: first_name
         data_type: varchar
-        description: ""
+        description: "First name of the customer"
 
       - name: last_name
         data_type: varchar
-        description: ""
+        description: "Last name of the customer"
 
   - name: stg_jaffle_shop__orders
     description: One order per row
@@ -29,7 +29,7 @@ models:
 
       - name: customer_id
         data_type: number
-        description: ""
+        description: Customer identifier referenced from customers table
         data_tests:
           - relationships:
               field: customer_id
@@ -37,7 +37,7 @@ models:
 
       - name: order_date
         data_type: date
-        description: ""
+        description: Date customer made an order
 
       - name: order_status
         data_type: varchar
