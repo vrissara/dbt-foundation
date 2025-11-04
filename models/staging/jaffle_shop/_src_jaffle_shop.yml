@@ -2,6 +2,7 @@ sources:
   - name: jaffle_shop
     database: raw
     schema: jaffle_shop
+    description: A clone of a Snowflakes database.
     config:
         freshness:
           warn_after:
@@ -13,15 +14,19 @@ sources:
         loaded_at_field: _ETL_LOADED_AT
     tables:
       - name: customers
+        description: Raw customer data
         freshness: null
         columns:
           - name: id
+            description: Primary key for raw customers
             data_tests:
               - unique
               - not_null
       - name: orders
+        description: Raw orders data
         columns:
           - name: id
+            description: Primary key for raw orders
             data_tests:
               - unique
               - not_null
