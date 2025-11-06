@@ -1,0 +1,10 @@
+macros:
+  - name: grant_select
+    description: A macro that grants select privs on target.schema to target.role unless otherwise specified
+    arguments:
+      - name: schema
+        type: string
+        description: schema we want to grant privs on, by default is our target schema
+      - name: role
+        type: string
+        description: role we want to grant privs on, by default is our target role
